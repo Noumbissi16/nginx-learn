@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Node.js DevOps Project – Noumbissi Stael</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        color: #333;
+        line-height: 1.6;
+        background: #f9fafc;
+      }
+
+      /* NAVBAR */
+
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: #0f172a;
+        z-index: 1000;
+      }
+
+      nav ul {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+      }
+
+      nav a {
+        color: white;
+        padding: 18px 20px;
+        display: block;
+        font-weight: 600;
+      }
+
+      nav a:hover {
+        background: #1e293b;
+      }
+
+      /* HERO */
+
+      header {
+        padding: 120px 20px 80px;
+        text-align: center;
+        background: linear-gradient(135deg, #2563eb, #0ea5e9);
+        color: white;
+      }
+
+      header img {
+        width: 140px;
+        margin-bottom: 20px;
+      }
+
+      header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+
+      header p {
+        font-size: 1.2rem;
+        opacity: 0.9;
+      }
+
+      /* SECTIONS */
+
+      section {
+        padding: 80px 20px;
+        max-width: 1000px;
+        margin: auto;
+      }
+
+      section h2 {
+        margin-bottom: 20px;
+        font-size: 2rem;
+        color: #0f172a;
+      }
+
+      .section-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: center;
+      }
+
+      .section-grid img {
+        width: 100%;
+        border-radius: 10px;
+      }
+
+      /* HOW TO RUN */
+
+      code {
+        background: #e2e8f0;
+        padding: 4px 8px;
+        border-radius: 5px;
+      }
+
+      /* SOCIAL */
+
+      .social-icons {
+        margin-top: 20px;
+      }
+
+      .social-icons a {
+        margin: 10px;
+        font-size: 22px;
+      }
+
+      /* FOOTER */
+
+      footer {
+        text-align: center;
+        padding: 40px;
+        background: #0f172a;
+        color: white;
+        margin-top: 60px;
+      }
+
+      /* RESPONSIVE */
+
+      @media (max-width: 800px) {
+        .section-grid {
+          grid-template-columns: 1fr;
+        }
+
+        nav ul {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+      /* DARK MODE */
+
+      :root {
+        --bg: #f9fafc;
+        --text: #333;
+        --nav: #0f172a;
+        --card: #ffffff;
+      }
+
+      body.dark {
+        --bg: #0f172a;
+        --text: #e5e7eb;
+        --nav: #020617;
+        --card: #1e293b;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        transition: 0.3s;
+      }
+
+      section {
+        background: var(--card);
+        border-radius: 12px;
+        padding: 60px 30px;
+        margin-bottom: 40px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+      }
+
+      body.dark section {
+        box-shadow: none;
+      }
+
+      nav {
+        background: var(--nav);
+      }
+
+      /* Toggle button */
+
+      .theme-toggle {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        background: #2563eb;
+        color: white;
+        border: none;
+        padding: 12px 16px;
+        border-radius: 30px;
+        cursor: pointer;
+        font-size: 14px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+      .hero-buttons {
+        margin-top: 25px;
+      }
+
+      .btn {
+        background: white;
+        color: #2563eb;
+        padding: 12px 20px;
+        border-radius: 6px;
+        margin-right: 10px;
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      .btn-outline {
+        border: 2px solid white;
+        color: white;
+        padding: 10px 18px;
+        border-radius: 6px;
+        text-decoration: none;
+      }
+
+      .btn:hover {
+        opacity: 0.9;
+      }
+
+      .btn-outline:hover {
+        background: white;
+        color: #2563eb;
+      }
+      .section-grid img {
+        width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      }
+      .profile-photo {
+        width: 260px;
+        border-radius: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#devops">DevOps</a></li>
+        <li><a href="#project">Project</a></li>
+        <li><a href="#run">Run</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- HERO -->
+
+    <header>
+      <img src="https://cdn-icons-png.flaticon.com/512/919/919825.png" />
+
+      <h1>Node.js + Docker DevOps Project</h1>
+
+      <p>
+        A minimal containerized Node.js application built as part of my DevOps
+        learning journey.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#project" class="btn">View Project</a>
+        <a href="#contact" class="btn-outline">Contact Me</a>
+      </div>
+    </header>
+
+    <main>
+      <!-- ABOUT -->
+
+      <section id="about">
+        <h2>About Me</h2>
+
+        <div class="section-grid">
+          <div>
+            <p>
+              I'm <strong>Noumbissi Stael</strong>, a software developer
+              currently learning
+              <strong
+                >DevOps, Cloud Infrastructure and Distributed Systems</strong
+              >. This project is a simple Node.js application designed to
+              demonstrate modern deployment practices using Docker. My goal is
+              to build scalable systems and improve my DevOps skills through
+              real-world projects.
+            </p>
+          </div>
+
+          <img class="profile-photo" src="images/stael.jpeg" />
+        </div>
+      </section>
+
+      <!-- DEVOPS -->
+
+      <section id="devops">
+        <h2>DevOps Focus</h2>
+
+        <div class="section-grid">
+          <img
+            src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3"
+          />
+
+          <div>
+            <p>
+              DevOps helps developers ship software faster and more reliably by
+              combining development and operations practices. Technologies I'm
+              currently exploring include:
+            </p>
+
+            <ul>
+              <li>Docker containerization</li>
+              <li>Kubernetes orchestration</li>
+              <li>CI/CD pipelines</li>
+              <li>Cloud infrastructure</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECT -->
+
+      <section id="project">
+        <h2>The Project</h2>
+
+        <div class="section-grid">
+          <div>
+            <p>
+              This is a simple Node.js application that serves an HTML page. The
+              goal of this project is not complexity but **demonstrating DevOps
+              concepts**, including:
+            </p>
+
+            <ul>
+              <li>Containerized Node.js apps</li>
+              <li>Docker image builds</li>
+              <li>Portable environments</li>
+              <li>Simple deployment workflow</li>
+            </ul>
+          </div>
+
+          <img
+            src="https://images.unsplash.com/photo-1605745341112-85968b19335b"
+          />
+        </div>
+      </section>
+
+      <!-- HOW TO RUN -->
+
+      <section id="run">
+        <h2>Run the Application</h2>
+
+        <p><strong>Run locally</strong></p>
+
+        <p>
+          Install dependencies:
+
+          <code>npm install</code>
+        </p>
+
+        <p>
+          Start the server:
+
+          <code>node index.js</code>
+        </p>
+
+        <br />
+
+        <p><strong>Run with Docker</strong></p>
+
+        <p>
+          Build image:
+
+          <code>docker build -t node-devops-app .</code>
+        </p>
+
+        <p>
+          Run container:
+
+          <code>docker run -p 3000:3000 node-devops-app</code>
+        </p>
+      </section>
+
+      <!-- CONTACT -->
+
+      <section id="contact">
+        <h2>Connect With Me</h2>
+
+        <p>
+          This project is open-source and part of my DevOps learning journey.
+        </p>
+
+        <p><strong>Noumbissi Stael</strong></p>
+
+        <div class="social-icons">
+          <a target="_blank" href="https://github.com/Noumbissi16">GitHub</a> |
+          <a target="_blank" href="https://www.linkedin.com/in/noumbissi-stael-910a48241/">LinkedIn</a> |
+          <a target="_blank" href="https://x.com/noumbissi_stael">X / Twitter</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 Noumbissi Stael — DevOps Learning Project</p>
+    </footer>
+    <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+
+    <script>
+      function toggleTheme() {
+        document.body.classList.toggle("dark");
+      }
+    </script>
+  </body>
+</html>
