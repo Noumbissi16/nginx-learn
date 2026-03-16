@@ -277,10 +277,12 @@
               currently learning
               <strong
                 >DevOps, Cloud Infrastructure and Distributed Systems</strong
-              >. This project is a simple Node.js application designed to
-              demonstrate modern deployment practices using Docker. My goal is
-              to build scalable systems and improve my DevOps skills through
-              real-world projects.
+              >. This project is a simple Node.js application that serves a
+              static HTML file. The objective is to pratice containerization and
+              deployment using Docker and nginx. Load balancing and automatic
+              container scaling . This align with my DevOps learning path and my
+              goal is to build scalable systems and improve my DevOps skills
+              through real-world projects.
             </p>
           </div>
 
@@ -288,59 +290,7 @@
         </div>
       </section>
 
-      <!-- DEVOPS -->
-
-      <section id="devops">
-        <h2>DevOps Focus</h2>
-
-        <div class="section-grid">
-          <img
-            src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3"
-          />
-
-          <div>
-            <p>
-              DevOps helps developers ship software faster and more reliably by
-              combining development and operations practices. Technologies I'm
-              currently exploring include:
-            </p>
-
-            <ul>
-              <li>Docker containerization</li>
-              <li>Kubernetes orchestration</li>
-              <li>CI/CD pipelines</li>
-              <li>Cloud infrastructure</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- PROJECT -->
-
-      <section id="project">
-        <h2>The Project</h2>
-
-        <div class="section-grid">
-          <div>
-            <p>
-              This is a simple Node.js application that serves an HTML page. The
-              goal of this project is not complexity but **demonstrating DevOps
-              concepts**, including:
-            </p>
-
-            <ul>
-              <li>Containerized Node.js apps</li>
-              <li>Docker image builds</li>
-              <li>Portable environments</li>
-              <li>Simple deployment workflow</li>
-            </ul>
-          </div>
-
-          <img
-            src="https://images.unsplash.com/photo-1605745341112-85968b19335b"
-          />
-        </div>
-      </section>
+     
 
       <!-- HOW TO RUN -->
 
@@ -358,7 +308,7 @@
         <p>
           Start the server:
 
-          <code>node index.js</code>
+          <code>npm start</code>
         </p>
 
         <br />
@@ -368,13 +318,13 @@
         <p>
           Build image:
 
-          <code>docker build -t node-devops-app .</code>
+          <code>docker compose up --build --scale app1=5 <strong>5 precise the number of containers to run</strong></code>
         </p>
 
         <p>
-          Run container:
+          Access the application at:
 
-          <code>docker run -p 3000:3000 node-devops-app</code>
+          <code>http://localhost</code>
         </p>
       </section>
 
@@ -391,8 +341,16 @@
 
         <div class="social-icons">
           <a target="_blank" href="https://github.com/Noumbissi16">GitHub</a> |
-          <a target="_blank" href="https://www.linkedin.com/in/noumbissi-stael-910a48241/">LinkedIn</a> |
-          <a target="_blank" href="https://x.com/noumbissi_stael">X / Twitter</a>
+          <a target="_blank" href="https://gitlab.com/noumbissistael">GitLab</a> |
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/noumbissi-stael-910a48241/"
+            >LinkedIn</a
+          >
+          |
+          <a target="_blank" href="https://x.com/noumbissi_stael"
+            >X / Twitter</a
+          >
         </div>
       </section>
     </main>
