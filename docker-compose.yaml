@@ -1,27 +1,27 @@
 services:
   app1:
     build: .
-    container_name: app1
+    # container_name: app1
     environment:
       - APP_NAME=App1
     networks:
       - app-network
 
-  app2:
-    build: .
-    container_name: app2
-    environment:
-      - APP_NAME=App2
-    networks:
-      - app-network
+  # app2:
+  #   build: .
+  #   container_name: app2
+  #   environment:
+  #     - APP_NAME=App2
+  #   networks:
+  #     - app-network
 
-  app3:
-    build: .
-    container_name: app3
-    environment:
-      - APP_NAME=App3
-    networks:
-      - app-network
+  # app3:
+  #   build: .
+  #   container_name: app3
+  #   environment:
+  #     - APP_NAME=App3
+  #   networks:
+  #     - app-network
   
   nginx:
     image: nginx
